@@ -70,7 +70,7 @@ namespace WAPS08.Controllers
                 oUser.Direccion = model.Direccion;
                 oUser.TipoVehiculo = model.TipoVehiculo;
                 oUser.Color = model.Color;
-                oUser.Precio = model.Precio;
+                oUser.Precio = (float)model.Precio;
                 
 
 
@@ -95,10 +95,10 @@ namespace WAPS08.Controllers
                 model.Modelo = oUser.Modelo;
                 model.Anio = oUser.Anio;
                 model.Imagen = oUser.ImgRuta;
-                oUser.Direccion = model.Direccion;
-                oUser.TipoVehiculo = model.TipoVehiculo;
-                oUser.Color = model.Color;
-                oUser.Precio = model.Precio;
+                model.Direccion = oUser.Direccion;
+                model.TipoVehiculo = oUser.TipoVehiculo;
+                model.Color = oUser.Color;
+                model.Precio = (float)oUser.Precio;
             }
 
             return View(model);
@@ -125,7 +125,7 @@ namespace WAPS08.Controllers
                 oUser.Direccion = model.Direccion;
                 oUser.TipoVehiculo = model.TipoVehiculo;
                 oUser.Color = model.Color;
-                oUser.Precio = model.Precio;
+                oUser.Precio = (float)model.Precio; 
 
                 db.Entry(oUser).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();

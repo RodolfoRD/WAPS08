@@ -24,7 +24,7 @@ namespace WAPS08.Models
         public string TipoVehiculo { get; set; }
         public Nullable<double> Precio { get; set; }
         public string Direccion { get; set; }
-    
+ 
         public virtual VHESTATU VHESTATU { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace WAPS08.Models.ViewModels
 
 		public string _Color { get; set; }
 
-		public string _Precio { get; set; }
+		public float _Precio { get; set; }
 	}
 
 	public class AddAutoViewModels
@@ -51,7 +51,7 @@ namespace WAPS08.Models.ViewModels
 		public string Color { get; set; }
 		[Required]
 		[Display(Name = "Precio")]
-		public string Precio { get; set; }
+		public float Precio { get; set; }
 	}
 
 	public class EditAutoViewModels
@@ -85,6 +85,6 @@ namespace WAPS08.Models.ViewModels
 		public string Color { get; set; }
 		[Required]
 		[Display(Name = "Precio")]
-		public string Precio { get; set; }
+		public float Precio { get; set; }
 	}
 }
