@@ -1,4 +1,5 @@
-﻿@model WAPS08.Models.ViewModels.EditAutoViewModels
+﻿{
+@model WAPS08.Models.ViewModels.EditAutoViewModels
     ViewBag.Title = "Edita Auto";
     Layout = "~/Views/Shared/_LayoutAcceso.cshtml";
 }
@@ -23,18 +24,35 @@
         <br />
 
         @Html.LabelFor(d => d.Modelo)
-        @Html.PasswordFor(d => d.Modelo, new { @class = "form-control" })
+        @Html.TextBoxFor(d => d.Modelo, new { @class = "form-control" })
         @Html.ValidationMessage("Modelo", new { @class = "text-danger" })
         <br />
 
         @Html.LabelFor(d => d.Anio)
-        @Html.PasswordFor(d => d.Anio, new { @class = "form-control" })
+        @Html.TextBoxFor(d => d.Anio, new { @class = "form-control" })
         @Html.ValidationMessage("Agnio", new { @class = "text-danger" })
         <br />
 
         @Html.LabelFor(d => d.Imagen)
-        @Html.PasswordFor(d => d.Imagen, new { @class = "form-control" })
+        @Html.TextBoxFor(d => d.Imagen, new { @class = "form-control" })
         @Html.ValidationMessage("Imagen", new { @class = "text-danger" })
+        <br />
+
+        @Html.LabelFor(d => d.Direccion)
+        @Html.TextBoxFor(d => d.Direccion, new { @class = "form-control" })
+        @Html.ValidationMessage("Direccion", new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(d => d.TipoVehiculo)
+        @Html.TextBoxFor(d => d.TipoVehiculo, new { @class = "form-control" })
+        @Html.ValidationMessage("Tipo Vehiculo", new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(d => d.Color)
+        @Html.TextBoxFor(d => d.Color, new { @class = "form-control" })
+        @Html.ValidationMessage("Color", new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(d => d.Precio)
+        @Html.TextBoxFor(d => d.Precio, new { @class = "form-control" })
+        @Html.ValidationMessage("Precio", new { @class = "text-danger" })
         <br />
 
         <div style="text-align:left;">
@@ -49,4 +67,4 @@
 
 
 
-
+    </div>
