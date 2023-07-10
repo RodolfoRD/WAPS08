@@ -1,0 +1,52 @@
+﻿@model WAPS08.Models.ViewModels.EditAutoViewModels
+    ViewBag.Title = "Edita Auto";
+    Layout = "~/Views/Shared/_LayoutAcceso.cshtml";
+}
+
+<h2>Editar Automovil</h2>
+
+<div class="col-md-12">
+    <br />
+    <br />
+
+    @using (Html.BeginForm("EditAuto", "Auto", FormMethod.Post, new { role = "form", @class = "" }))
+    {
+        //@Html.HiddenFor(d => d.IdAuto)
+
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationMessage("error", new { @class = "text-danger" })
+
+        @Html.LabelFor(d => d.Marca)
+        @Html.TextBoxFor(d => d.Marca, new { @class = "form-control" })
+        @Html.ValidationMessage("Marca", new { @class = "text-danger" })
+        <br />
+
+        @Html.LabelFor(d => d.Modelo)
+        @Html.PasswordFor(d => d.Modelo, new { @class = "form-control" })
+        @Html.ValidationMessage("Modelo", new { @class = "text-danger" })
+        <br />
+
+        @Html.LabelFor(d => d.Anio)
+        @Html.PasswordFor(d => d.Anio, new { @class = "form-control" })
+        @Html.ValidationMessage("Agnio", new { @class = "text-danger" })
+        <br />
+
+        @Html.LabelFor(d => d.Imagen)
+        @Html.PasswordFor(d => d.Imagen, new { @class = "form-control" })
+        @Html.ValidationMessage("Imagen", new { @class = "text-danger" })
+        <br />
+
+        <div style="text-align:left;">
+            <input type="submit" value="Guardar" class="btn btn-success btn-lg" />
+            <input type="button" value="Cargar Imagen" class="btn btn-primary btn-lg" />
+            <input type="button" value="Volver Atras" class="btn btn-info btn-lg" onclick="document.location.href = '@Url.Content("~/user/query")'" />
+        </div>
+
+        <br />
+        <br />
+    }
+
+
+
+

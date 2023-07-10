@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAcceso.cshtml"; @* le estamos indicando que utilizaremos este LayOut *@
+}
+
+<div class="row">
+    <form id="frmAcceder">
+        <div class="col-lg-6 col-lg-offset-0">
+            <div>
+                Usuario
+                <input type="text" name="usuario" class="form-control"/>
+            </div>
+            <br />
+            <div>
+                Password
+                <input type="password" name="password" class="form-control"/>
+            </div>
+            <br />
+            <div>
+                <input type="submit" class="btn btn-success btn-lg" value="Entrar" />
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function()
+        {                                                // con #frmAcceder que es el ID anterior
+            $("#frmAcceder").submit(function(e)          // permite iniciar el envio de esta vista al backend en este caso accederController
+            {
+                e.preventDefault();                      // cancela el evento, es decir no permite que el submit lo haga tipo clasico.
+                url = "@Url.Content("~/acceder/enter")"  // le indico la direccion url
+                parametros = $(this).serialize();        // obtenemos los elementos preparados para una peticion del backend
+
+                $.post(url, parametros, function (data)  // envia una entidad a un recurso en especifico
+                {
+                    if (data == 1)                       // cuando data sea igual a 1 ejecutara la url, este dato viene del BackEnd
+                    {
+                        document.location.href = "@Url.Content("~/")"  // permite obtener o establecer la dirección de la página
+                        // que se muestra en la ventana del navegador
+                    }
+                    else
+                    {
+                        alert(data)    // abrira una caja de mensaje indicando un error
+                    }
+                })
+            })
+        })
+    </script>
+}
+
+
+
