@@ -22,7 +22,7 @@
     <br />
     <br />
 
-    @using (Html.BeginForm("AddAuto", "Auto", FormMethod.Post, new { role = "form", @class = "" }))
+    @using (Html.BeginForm("AddAuto", "Auto", FormMethod.Post, new { role = "form", @class = "" , enctype ="multipart/form-data"}))
     {
         //@Html.AntiForgeryToken()
         <div>
@@ -40,8 +40,10 @@
                 <br />
 
                 @Html.LabelFor(d => d.Anio)
-                @Html.PasswordFor(d => d.Anio, new { @class = "form-control" })
+                @Html.TextBoxFor(d => d.Anio, new { @class = "form-control" })
                 @Html.ValidationMessage("Agnio", new { @class = "text-danger" })
+                <br />
+                <input  class="form-control"  type="file" name="ImageFile" />
                 <br />
 
                 @Html.LabelFor(d => d.Imagen)

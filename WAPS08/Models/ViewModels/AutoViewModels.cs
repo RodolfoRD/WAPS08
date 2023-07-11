@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace WAPS08.Models.ViewModels
 {
@@ -52,6 +53,8 @@ namespace WAPS08.Models.ViewModels
 		[Required]
 		[Display(Name = "Precio")]
 		public float Precio { get; set; }
+
+		public  HttpPostedFileBase ImageFile { get; set; }
 	}
 
 	public class EditAutoViewModels

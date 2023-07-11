@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -63,6 +64,12 @@ namespace WAPS08.Controllers
                 return View(model);
             }
 
+            string filename = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
+            string extension = Path.GetExtension(model.ImageFile.FileName);
+            filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
+            model.Imagen = "~/Image/" + filename;
+            filename = Path.Combine(Server.MapPath("~/Image/") + filename);
+            model.ImageFile.SaveAs(filename);
             using (var db = new DBMVCSCEntities())
             {
                 AUTO oUser = new AUTO();

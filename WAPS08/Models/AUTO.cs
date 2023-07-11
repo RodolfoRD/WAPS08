@@ -10,6 +10,8 @@
 namespace WAPS08.Models
 {
     using System;
+    using System.Web;
+    using System.ComponentModel;
     using System.Collections.Generic;
     
     public partial class AUTO
@@ -24,7 +26,10 @@ namespace WAPS08.Models
         public string TipoVehiculo { get; set; }
         public Nullable<double> Precio { get; set; }
         public string Direccion { get; set; }
- 
-        public virtual VHESTATU VHESTATU { get; set; }
+
+		public HttpPostedFileBase ImageFile { get; set; }
+
+
+		public virtual VHESTATU VHESTATU { get; set; }
     }
 }
