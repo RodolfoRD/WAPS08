@@ -33,11 +33,12 @@ namespace WAPS08.Models.ViewModels
 		[Display(Name = "Modelo Del Vehiculo")]
 		public string Modelo { get; set; }
 
-		[Required]
+		[Required (ErrorMessage ="Este solo acepta valores numerico")]
+		[DataType(DataType.PostalCode)]
 		[Display(Name = "Ano Del Vehiculo")]
 		public string Anio { get; set; }
 
-		[Required]
+		
 		[Display(Name = "Ruta de la Imagen")]
 		public string Imagen { get; set; }
 
@@ -50,7 +51,9 @@ namespace WAPS08.Models.ViewModels
 		[Required]
 		[Display(Name = "Color")]
 		public string Color { get; set; }
+
 		[Required]
+		[DataType(DataType.Currency)]
 		[Display(Name = "Precio")]
 		public float Precio { get; set; }
 

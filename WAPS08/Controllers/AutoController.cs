@@ -67,8 +67,8 @@ namespace WAPS08.Controllers
             string filename = Path.GetFileNameWithoutExtension(model.ImageFile.FileName);
             string extension = Path.GetExtension(model.ImageFile.FileName);
             filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
-            model.Imagen = "~/Image/" + filename;
-            filename = Path.Combine(Server.MapPath("~/Image/") + filename);
+            model.Imagen = "~/Image/"  + filename;
+            filename = Path.Combine(Server.MapPath("~/Image/") + filename );
             model.ImageFile.SaveAs(filename);
             using (var db = new DBMVCSCEntities())
             {

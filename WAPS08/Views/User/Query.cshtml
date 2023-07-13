@@ -4,44 +4,75 @@
     Layout = "~/Views/Shared/_LayoutAcceso.cshtml";
 }
 
+
+<style>
+    div .cd {
+        justify-content: center;
+        text-align: center;
+        font-size: 15px;
+        padding: 30px;
+        margin-bottom: 10px;
+        border-radius: 25px;
+        border-width: 200px;
+        border-block: solid;
+        writing-mode: horizontal-tb;
+        border-block-color: #cbc7c7
+    }
+
+    label input {
+        justify-content: center;
+        text-align: center;
+        padding: 5px;
+        border: none;
+    }
+</style>
+
+
 <h2>Consulta Usuarios</h2>
 
-<div class="row">
-    <br />
 
-    <div class="col-md-12">
-        <input type="button" class="btn btn-primary btn-lg" onclick="document.location.href='@Url.Content("~/User/Add")'" value="Nuevo" />
-        <input type="button" class="btn btn-info btn-lg" value="Volver Atras" onclick="document.location.href = '@Url.Content("~/")'" />
-    </div>
 
-    <br />
-    <br />
-    <br />
+<div class="container-fluid">
+    <div class="row ">
 
-    <div class="col-lg-12">
-        <table class="table table-bordered">
-            <tr>
-                <th style="background-color: #0094ff; color: white;">ID</th>
-                <th style="background-color: #0094ff; color: white;">Email</th>
-                <th style="background-color: #0094ff; color: white;">Edad</th>
-                <th style="background-color: #0094ff; color: white;">Acccion a Tomar</th>
-            </tr>
-            @foreach (var oElmento in Model)
-            {
-                <tr>
-                    <td>@oElmento._Id</td>
-                    <td>@oElmento._Email</td>
-                    <td>@oElmento._Edad</td>
-                    <td>
-                        <input type="button" value="Borrar" class="btn btn-danger" onclick="jsDelete(@oElmento._Id);" />
-                        <input type="button" value="Editar" class="btn btn-default" onclick="document.location.href = '@Url.Content("~/User/Edit/" + oElmento._Id)'" />
-                    </td>
-                </tr>
-            }
-        </table>
+        @foreach (var oElemento in Model)
+        {
+            <div class="col-lg-4 cd">
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+
+                        <h4>ID: @oElemento._Id </h4>
+                        <label>Email <input type="text" value=@oElemento._Email disabled /></label>
+                        <label>Edad  <input type="text" value=@oElemento._Edad disabled /></label>
+
+
+
+                        <div class=" d-flex justify-content-between alingalign-items-center">
+                            <div class="btn-group">
+                                <input onclick="jsDelete(@oElemento._Id);"
+                                       type="button"
+                                       value="Borrar"
+                                       class="btn btn-danger" />
+                                <input onclick="document.location.href = '@Url.Content("~/User/Edit/" + oElemento._Id)'"
+                                       type="button"
+                                       value="Editar"
+                                       class="btn btn-default" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+
     </div>
 </div>
-
 
 <script>
     function jsDelete(Id) {

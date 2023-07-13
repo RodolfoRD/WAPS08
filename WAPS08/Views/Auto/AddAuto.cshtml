@@ -29,7 +29,7 @@
             <div>
                 @Html.ValidationMessage("error", new { @class = "text-danger" })
 
-                @Html.LabelFor(d => d.Marca)  
+                @Html.LabelFor(d => d.Marca)
                 @Html.TextBoxFor(d => d.Marca, new { @class = "form-control" })
                 @Html.ValidationMessage("Marca", new { @class = "text-danger" })
                 <br />
@@ -41,15 +41,34 @@
 
                 @Html.LabelFor(d => d.Anio)
                 @Html.TextBoxFor(d => d.Anio, new { @class = "form-control" })
-                @Html.ValidationMessage("Agnio", new { @class = "text-danger" })
+                @Html.ValidationMessage("Anio", new { @class = "text-danger" })
                 <br />
-                <input  class="form-control"  type="file" name="ImageFile" />
+                @Html.LabelFor(d => d.Direccion)
+                @Html.TextBoxFor(d => d.Direccion, new { @class = "form-control" })
+                @Html.ValidationMessage("Direccion", new { @class = "text-danger" })
+
+                @Html.LabelFor(d => d.TipoVehiculo)
+                @Html.TextBoxFor(d => d.TipoVehiculo, new { @class = "form-control" })
+                @Html.ValidationMessage("TipoVehiculo", new { @class = "text-danger" })
+
+                @Html.LabelFor(d => d.Color)
+                @Html.TextBoxFor(d => d.Color, new { @class = "form-control" })
+                @Html.ValidationMessage("Color", new { @class = "text-danger" })
+
+                s
+                @Html.LabelFor(d => d.Precio)
+                @Html.TextBoxFor(d => d.Precio, new { @class = "form-control" })
+                @Html.ValidationMessage("Precio", new { @class = "text-danger" })
                 <br />
 
-                @Html.LabelFor(d => d.Imagen)
-                @Html.PasswordFor(d => d.Imagen, new { @class = "form-control" })
+                @Html.LabelFor(d => d.ImageFile)
+                @Html.TextBoxFor(d => d.ImageFile, new { @class = "form-control", @type= "file" })
                 @Html.ValidationMessage("Imagen", new { @class = "text-danger" })
                 <br />
+
+
+
+                
             </div>
             <div class="jumbotron">
                 <div class="container">
