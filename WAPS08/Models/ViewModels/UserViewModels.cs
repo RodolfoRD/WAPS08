@@ -19,28 +19,28 @@ namespace WAPS08.Models.ViewModels
 
     public class AddUserViewModels
     {
-        [Required]
-        [Display(Name = "Nombre Corto")]
+        [Required(ErrorMessage ="Este campo es requerido")]
+        [Display(Name = "Nombre")]
         public string Nombre { get; set; }
 
-        [Required]
-        [EmailAddress]
-        [Display(Name ="Correo Electronico")]
-        [StringLength(100,ErrorMessage ="El {0} debe tener al menos {1} caracter", MinimumLength =1)]
+
+        [Required(ErrorMessage = "Debe colocar su correo electronico")]
+        [Display(Name = "Correo Electronico")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Debe ingresar una contraseña")]
         [DataType(DataType.Password)]
-        [Display(Name ="Password")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
-        
-        [Required]
+
+        [Required(ErrorMessage = "Debe confirmar su contraseña")]
+        [Compare(nameof(Password), ErrorMessage = "Las contraseñas no coinciden")]
         [DataType(DataType.Password)]
-        [Display(Name ="Confirma Password")]
-        [Compare("Password", ErrorMessage ="Las contrasenas no son iguales :(")]
+        [Display(Name = "Confirma Password")]
         public string ConfirmaPassword { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Debe indicar su edad")]
+        [Range(1, 99, ErrorMessage = "Su edad no puede ser 0")]
         [Display(Name = "Edad")]
         public int Edad { get; set; }
     }
@@ -49,24 +49,25 @@ namespace WAPS08.Models.ViewModels
     {
         public int Id { get; set; }
 
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Correo Electronico")]
-        [StringLength(100, ErrorMessage = "El {0} debe tener al menos {1} caracter", MinimumLength = 1)]
+        [Required(ErrorMessage = "Debe colocar su correo electronico")]
+        [Display(Name = "Correo Electronico")]        
         public string Email { get; set; }
 
-
+        [Required(ErrorMessage ="Debe ingresar una contraseña")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
 
+        [Required(ErrorMessage = "Debe confirmar su contraseña")]
+        [Compare(nameof(Password), ErrorMessage = "Las contraseñas no coinciden")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirma Password")]
-        [Compare("Password", ErrorMessage = "Las contrasenas no son iguales :(")]
+        [Display(Name = "Confirma Password")]        
         public string ConfirmaPassword { get; set; }
 
-        [Required]
+
+        [Required(ErrorMessage = "Debe indicar su edad")]
+        [Range(1,99 , ErrorMessage = "Su edad no puede ser 0")]
         [Display(Name = "Edad")]
         public int Edad { get; set; }
     }

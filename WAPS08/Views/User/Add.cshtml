@@ -1,7 +1,7 @@
 ﻿@model WAPS08.Models.ViewModels.AddUserViewModels
 @{
     ViewBag.Title = "Agregar usuarios";
-    Layout = "~/Views/Shared/_LayoutAcceso.cshtml";
+    
 }
 
 <h2> Agregar Usuario</h2>
@@ -33,12 +33,14 @@
 
         @Html.LabelFor(d => d.ConfirmaPassword)
         @Html.PasswordFor(d => d.ConfirmaPassword, new { @class = "form-control" })
-        @Html.ValidationMessage("Confirma Password", new { @class = "text-danger" })
+        @Html.ValidationMessage("ConfirmaPassword", new { @class = "text-danger" })
         <br />
 
-        @Html.LabelFor(d => d.Edad)
-        @Html.TextBoxFor(d => d.Edad, new { @class = "form-control" })
-        @Html.ValidationMessage("Edad", new { @class = "text-danger" })
+        <div>
+            @Html.LabelFor(d => d.Edad)
+            @Html.TextBoxFor(d => d.Edad, new { @class = "form-control" })
+            @Html.ValidationMessage("Edad", new { @class = "text-danger" })
+        </div>
         <br />
 
         <div style="text-align:left;">

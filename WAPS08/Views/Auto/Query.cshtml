@@ -68,28 +68,23 @@
 
                         <div class="card-body cd rounded-pill">
 
-
                             <h4 style="color:white">ID: @oElemento._Idauto </h4>
 
                             <img src="@oElemento._Imagen" class="image" alt="..."> <br>
-
-
-
-                        
+                            
                             <label  class="pr" for="marca">Marca:  <label class="val">@oElemento._Marca</label> </label> <br>
                             <label for="modelo">Modelo:  <label class="val">@oElemento._Modelo</label> </label> 
                             <label for="anio">  Año: <label class="val">@oElemento._Anio</label></label> <br>
-                            <label for="direccion">Direccion: <br><label class="val">@oElemento._Direccion</label></label> <br>
-                            <label for="tv">Tipo Vehiculo:<label class="val">@oElemento._TipoVehiculo</label></label> <br>
-                            <label for="color">Color:<label class="val">@oElemento._Color</label></label> 
-                            <label for="precio">Precio:<label class="val">@oElemento._Precio</label></label>
+                            <label for="direccion">Direccion: <br><label class="val">@*@oElemento._Direccion*@</label></label> <br>
+                            <label for="tv">Tipo Vehiculo:<label class="val">@*@oElemento._TipoVehiculo*@</label></label> <br>
+                            <label for="color">Color:<label class="val">@*@oElemento._Color*@</label></label> 
+                            <label for="precio">Precio:<label class="val">@*@oElemento._Preci*@o</label></label>
                           
 
                             <div class=" d-flex justify-content-between alingalign-items-center">
                                 <input type="button" value="Borrar" class="btn btn-danger" onclick="jsDelete(@oElemento._Idauto);" />
                                 <input type="button" value="Editar" class="btn btn-default" onclick="document.location.href = '@Url.Content("~/Auto/EditAuto/" + oElemento._Idauto)'" />
                             </div>
-
 
                         </div>
                     </div>

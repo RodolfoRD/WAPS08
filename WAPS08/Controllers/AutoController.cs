@@ -32,16 +32,16 @@ namespace WAPS08.Controllers
                            _Marca = d.Marca,
                            _Modelo = d.Modelo,
                            _Anio = d.Anio,
-                           _Imagen = d.ImgRuta,
-                           _Direccion = d.Direccion,
-                           _TipoVehiculo = d.TipoVehiculo,
-                           _Color = d.Color,
-                           _Precio = (float)d.Precio
+                           _Imagen = d.ImgRuta
+                           //_Direccion = d.Direccion,
+                           //_TipoVehiculo = d.TipoVehiculo,
+                           //_Color = d.Color,
+                           //_Precio = (float)d.Precio
                          
                        }).ToList();
             }
 
-            return View(lst);         
+            return View();         
         }
 
         // ----------------------------------------------------------------------
